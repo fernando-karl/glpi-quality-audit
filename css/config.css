@@ -1,0 +1,540 @@
+/**
+ * Quality Audit - Configuration Page Styles
+ * Modern admin dashboard UX/UI
+ */
+
+/* ========== Layout Grid ========== */
+.qa-config-wrapper {
+   max-width: 1100px;
+   margin: 0 auto;
+   padding: 20px 15px;
+}
+
+.qa-config-header {
+   text-align: center;
+   margin-bottom: 24px;
+}
+
+.qa-config-header h2 {
+   margin: 0;
+   font-size: 22px;
+   font-weight: 600;
+   color: #333;
+}
+
+.qa-config-grid {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 24px;
+   margin-bottom: 24px;
+}
+
+@media (max-width: 900px) {
+   .qa-config-grid {
+      grid-template-columns: 1fr;
+   }
+}
+
+.qa-config-section {
+   background: #fff;
+   border: 1px solid #dee2e6;
+   border-radius: 8px;
+   padding: 24px;
+   box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.qa-config-section-title {
+   font-size: 15px;
+   font-weight: 700;
+   text-transform: uppercase;
+   letter-spacing: 0.5px;
+   color: #495057;
+   margin: 0 0 20px 0;
+   padding-bottom: 10px;
+   border-bottom: 2px solid #e9ecef;
+   display: flex;
+   align-items: center;
+   gap: 8px;
+}
+
+.qa-config-section-title i {
+   color: #6c757d;
+}
+
+/* ========== Form Fields (labels above) ========== */
+.qa-field {
+   margin-bottom: 18px;
+}
+
+.qa-field:last-child {
+   margin-bottom: 0;
+}
+
+.qa-field-label {
+   display: block;
+   font-size: 13px;
+   font-weight: 600;
+   color: #495057;
+   margin-bottom: 6px;
+}
+
+.qa-field-label .qa-required {
+   color: #dc3545;
+   margin-left: 2px;
+}
+
+.qa-field-hint {
+   display: block;
+   font-size: 11.5px;
+   color: #6c757d;
+   margin-top: 4px;
+   line-height: 1.4;
+}
+
+.qa-field-inherited {
+   display: inline-block;
+   font-size: 12px;
+   color: #28a745;
+   margin-top: 4px;
+}
+
+.qa-field-own {
+   display: inline-block;
+   font-size: 12px;
+   color: #007bff;
+   margin-top: 4px;
+}
+
+/* ========== API Key Field ========== */
+.qa-apikey-wrapper {
+   position: relative;
+   display: flex;
+   align-items: center;
+   gap: 8px;
+}
+
+.qa-apikey-wrapper input[type="password"],
+.qa-apikey-wrapper input[type="text"] {
+   flex: 1;
+   padding-right: 40px;
+}
+
+.qa-apikey-toggle {
+   position: absolute;
+   right: 12px;
+   top: 50%;
+   transform: translateY(-50%);
+   background: none;
+   border: none;
+   cursor: pointer;
+   color: #6c757d;
+   padding: 4px;
+   font-size: 16px;
+   line-height: 1;
+}
+
+.qa-apikey-toggle:hover {
+   color: #333;
+}
+
+.qa-apikey-badge {
+   display: inline-flex;
+   align-items: center;
+   gap: 4px;
+   font-size: 11px;
+   font-weight: 600;
+   padding: 3px 10px;
+   border-radius: 12px;
+   white-space: nowrap;
+}
+
+.qa-apikey-badge.configured {
+   background: #d4edda;
+   color: #155724;
+   border: 1px solid #c3e6cb;
+}
+
+.qa-apikey-badge.not-configured {
+   background: #fff3cd;
+   color: #856404;
+   border: 1px solid #ffeeba;
+}
+
+/* ========== Threshold Slider ========== */
+.qa-threshold-wrapper {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+}
+
+.qa-threshold-slider {
+   flex: 1;
+   -webkit-appearance: none;
+   appearance: none;
+   height: 6px;
+   border-radius: 3px;
+   background: #dee2e6;
+   outline: none;
+   transition: background 0.2s;
+}
+
+.qa-threshold-slider::-webkit-slider-thumb {
+   -webkit-appearance: none;
+   appearance: none;
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   background: #007bff;
+   cursor: pointer;
+   border: 2px solid #fff;
+   box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+   transition: transform 0.15s;
+}
+
+.qa-threshold-slider::-webkit-slider-thumb:hover {
+   transform: scale(1.15);
+}
+
+.qa-threshold-slider::-moz-range-thumb {
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   background: #007bff;
+   cursor: pointer;
+   border: 2px solid #fff;
+   box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.qa-threshold-number {
+   width: 60px;
+   text-align: center;
+   font-weight: 600;
+   font-size: 15px;
+   padding: 4px 8px;
+   border: 1px solid #ced4da;
+   border-radius: 4px;
+}
+
+/* ========== Ticket Type Chips ========== */
+.qa-chips-group {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 8px;
+}
+
+.qa-chip {
+   display: inline-flex;
+   align-items: center;
+   gap: 6px;
+   padding: 6px 14px;
+   border: 2px solid #dee2e6;
+   border-radius: 20px;
+   cursor: pointer;
+   font-size: 13px;
+   font-weight: 500;
+   color: #495057;
+   background: #f8f9fa;
+   transition: all 0.15s ease;
+   user-select: none;
+}
+
+.qa-chip:hover {
+   border-color: #adb5bd;
+   background: #e9ecef;
+}
+
+.qa-chip input[type="checkbox"] {
+   display: none;
+}
+
+.qa-chip.active {
+   background: #e7f1ff;
+   border-color: #007bff;
+   color: #004085;
+}
+
+.qa-chip .qa-chip-check {
+   width: 16px;
+   height: 16px;
+   border-radius: 50%;
+   border: 2px solid #adb5bd;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 10px;
+   transition: all 0.15s ease;
+}
+
+.qa-chip.active .qa-chip-check {
+   background: #007bff;
+   border-color: #007bff;
+   color: #fff;
+}
+
+/* ========== Tooltip Icons ========== */
+.qa-tooltip-icon {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   width: 16px;
+   height: 16px;
+   border-radius: 50%;
+   background: #e9ecef;
+   color: #6c757d;
+   font-size: 10px;
+   font-weight: 700;
+   cursor: help;
+   margin-left: 4px;
+   position: relative;
+   vertical-align: middle;
+}
+
+.qa-tooltip-icon:hover::after {
+   content: attr(data-tooltip);
+   position: absolute;
+   bottom: calc(100% + 8px);
+   left: 50%;
+   transform: translateX(-50%);
+   background: #333;
+   color: #fff;
+   padding: 6px 12px;
+   border-radius: 4px;
+   font-size: 11px;
+   font-weight: 400;
+   white-space: nowrap;
+   max-width: 280px;
+   white-space: normal;
+   z-index: 100;
+   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+   line-height: 1.4;
+}
+
+.qa-tooltip-icon:hover::before {
+   content: '';
+   position: absolute;
+   bottom: calc(100% + 2px);
+   left: 50%;
+   transform: translateX(-50%);
+   border: 5px solid transparent;
+   border-top-color: #333;
+   z-index: 100;
+}
+
+/* ========== Buttons ========== */
+.qa-btn-test {
+   display: inline-flex;
+   align-items: center;
+   gap: 6px;
+   padding: 6px 14px;
+   border: 1px solid #6c757d;
+   border-radius: 4px;
+   background: transparent;
+   color: #6c757d;
+   font-size: 12px;
+   font-weight: 500;
+   cursor: pointer;
+   transition: all 0.15s ease;
+   margin-top: 8px;
+}
+
+.qa-btn-test:hover {
+   background: #6c757d;
+   color: #fff;
+}
+
+.qa-config-footer {
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   gap: 12px;
+   padding: 16px 24px;
+   background: #f8f9fa;
+   border: 1px solid #dee2e6;
+   border-radius: 8px;
+   margin-top: 0;
+}
+
+.qa-btn-save {
+   padding: 8px 28px;
+   background: #007bff;
+   color: #fff;
+   border: none;
+   border-radius: 4px;
+   font-size: 14px;
+   font-weight: 600;
+   cursor: pointer;
+   transition: background 0.15s;
+}
+
+.qa-btn-save:hover {
+   background: #0056b3;
+}
+
+.qa-btn-delete {
+   padding: 8px 20px;
+   background: transparent;
+   color: #dc3545;
+   border: 1px solid #dc3545;
+   border-radius: 4px;
+   font-size: 13px;
+   font-weight: 500;
+   cursor: pointer;
+   transition: all 0.15s;
+}
+
+.qa-btn-delete:hover {
+   background: #dc3545;
+   color: #fff;
+}
+
+/* ========== Configured Entities Table (Clean) ========== */
+.qa-entities-section {
+   max-width: 1100px;
+   margin: 24px auto;
+}
+
+.qa-entities-section h3 {
+   font-size: 15px;
+   font-weight: 700;
+   text-transform: uppercase;
+   letter-spacing: 0.5px;
+   color: #495057;
+   margin: 0 0 12px 0;
+}
+
+.qa-entities-table {
+   width: 100%;
+   border-collapse: collapse;
+   background: #fff;
+   border-radius: 8px;
+   overflow: hidden;
+   border: 1px solid #dee2e6;
+   box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.qa-entities-table thead th {
+   background: #f8f9fa;
+   padding: 10px 16px;
+   font-size: 12px;
+   font-weight: 700;
+   text-transform: uppercase;
+   letter-spacing: 0.3px;
+   color: #6c757d;
+   text-align: left;
+   border-bottom: 2px solid #dee2e6;
+}
+
+.qa-entities-table tbody tr {
+   border-bottom: 1px solid #f0f0f0;
+   transition: background 0.1s;
+}
+
+.qa-entities-table tbody tr:nth-child(even) {
+   background: #f9fafb;
+}
+
+.qa-entities-table tbody tr:hover {
+   background: #e8f4fd;
+}
+
+.qa-entities-table tbody tr.qa-row-current {
+   background: #e8f4fd;
+   font-weight: 600;
+}
+
+.qa-entities-table td {
+   padding: 10px 16px;
+   font-size: 13px;
+   color: #333;
+}
+
+.qa-entities-table a {
+   color: #007bff;
+   text-decoration: none;
+}
+
+.qa-entities-table a:hover {
+   text-decoration: underline;
+}
+
+/* Status icons in tables */
+.qa-status-yes {
+   color: #28a745;
+   font-weight: 600;
+}
+
+.qa-status-no {
+   color: #dc3545;
+}
+
+/* ========== Toggle Switches ========== */
+.qa-toggle-row {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 10px 0;
+   border-bottom: 1px solid #f0f0f0;
+}
+
+.qa-toggle-row:last-child {
+   border-bottom: none;
+   padding-bottom: 0;
+}
+
+.qa-toggle-row:first-child {
+   padding-top: 0;
+}
+
+.qa-toggle-info {
+   flex: 1;
+}
+
+.qa-toggle-info .qa-field-label {
+   margin-bottom: 2px;
+}
+
+.qa-toggle-info .qa-field-hint {
+   margin-top: 0;
+}
+
+/* ========== Modal Refinements ========== */
+#qa-test-modal .qa-modal-inner {
+   background: #fff;
+   border-radius: 12px;
+   padding: 30px;
+   max-width: 480px;
+   width: 90%;
+   margin: auto;
+   position: relative;
+   top: 50%;
+   transform: translateY(-50%);
+   box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 900px) {
+   .qa-config-wrapper {
+      padding: 10px;
+   }
+
+   .qa-config-footer {
+      flex-direction: column;
+   }
+
+   .qa-btn-save, .qa-btn-delete {
+      width: 100%;
+      text-align: center;
+   }
+
+   .qa-threshold-wrapper {
+      flex-wrap: wrap;
+   }
+
+   .qa-chips-group {
+      flex-direction: column;
+   }
+
+   .qa-chip {
+      justify-content: center;
+   }
+}

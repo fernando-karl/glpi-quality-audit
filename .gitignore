@@ -1,0 +1,45 @@
+# GLPi Plugin - Quality Audit
+# .gitignore
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# PHPUnit
+phpunit.xml
+coverage/
+.phpunit.result.cache
+
+# Composer
+vendor/
+composer.lock
+
+# Environment
+.env
+.env.local
+
+# Build artifacts
+dist/
+build/
+
+# Claude Code
+.claude/
+
+# GLPi specific
+config_db.php

@@ -1,0 +1,275 @@
+/**
+ * Quality Audit Plugin - Mobile Responsive Styles
+ * Add responsive design and mobile-friendly interfaces
+ */
+
+/* Base responsive container */
+.qa-container {
+   max-width: 100%;
+   padding: 15px;
+}
+
+/* Mobile-first adjustments */
+@media (max-width: 768px) {
+   /* Reduce padding on mobile */
+   .qa-container {
+      padding: 10px;
+   }
+   
+   /* Stack cards in single column */
+   .qa-dashboard .col-md-3,
+   .qa-dashboard .col-md-4 {
+      width: 100% !important;
+      margin-bottom: 15px;
+   }
+   
+   /* Full width tables */
+   .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+   }
+   
+   /* Smaller fonts for mobile */
+   .qa-dashboard .info-box-number {
+      font-size: 24px !important;
+   }
+   
+   .qa-dashboard .info-box-text {
+      font-size: 12px;
+   }
+   
+   /* Mobile-friendly buttons */
+   .btn {
+      width: 100%;
+      margin-bottom: 10px;
+      white-space: normal;
+   }
+   
+   /* Mobile form controls */
+   .form-group {
+      margin-bottom: 15px;
+   }
+   
+   .form-control {
+      font-size: 16px; /* Prevents zoom on iOS */
+   }
+   
+   /* Mobile grid adjustments */
+   .row {
+      margin-left: -5px;
+      margin-right: -5px;
+   }
+   
+   .col-md-3, .col-md-4, .col-md-6, .col-md-8, .col-md-12 {
+      padding-left: 5px;
+      padding-right: 5px;
+   }
+   
+   /* Header adjustments */
+   .box-header h3 {
+      font-size: 16px;
+   }
+   
+   /* Smaller badges */
+   .badge {
+      font-size: 10px;
+      padding: 3px 6px;
+   }
+   
+   /* Hide less important info on mobile */
+   .mobile-hidden {
+      display: none !important;
+   }
+   
+   /* Responsive table */
+   .qa-table-mobile {
+      display: block;
+   }
+   
+   .qa-table-mobile thead {
+      display: none;
+   }
+   
+   .qa-table-mobile tbody tr {
+      display: block;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #fff;
+   }
+   
+   .qa-table-mobile td {
+      display: block;
+      text-align: left;
+      padding: 8px 12px;
+      border-bottom: 1px solid #eee;
+   }
+   
+   .qa-table-mobile td:before {
+      content: attr(data-label);
+      font-weight: bold;
+      display: block;
+      margin-bottom: 4px;
+      color: #666;
+      font-size: 11px;
+      text-transform: uppercase;
+   }
+   
+   /* Progress bars on mobile */
+   .progress {
+      height: 20px;
+   }
+   
+   /* Score badge larger on mobile */
+   .qa-score-bar {
+      height: 40px !important;
+   }
+   
+   /* Filter form mobile */
+   .qa-filters .form-inline .form-group {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+   }
+   
+   .qa-filters .form-inline select,
+   .qa-filters .form-inline input {
+      width: 100% !important;
+   }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+   .qa-dashboard .col-md-3 {
+      width: 50% !important;
+      float: left;
+   }
+}
+
+/* Desktop - ensure cards don't get too wide */
+@media (min-width: 1200px) {
+   .qa-dashboard .info-box {
+      min-height: 150px;
+   }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+   /* Larger touch targets */
+   .btn, .form-control, select, input[type="checkbox"], input[type="radio"] {
+      min-height: 44px;
+   }
+   
+   /* Remove hover effects on touch */
+   .info-box:hover {
+      transform: none !important;
+   }
+   
+   /* Larger touch area for checkboxes */
+   input[type="checkbox"],
+   input[type="radio"] {
+      width: 24px;
+      height: 24px;
+   }
+}
+
+/* Print styles */
+@media print {
+   .box-tools,
+   .qa-filters,
+   .btn {
+      display: none !important;
+   }
+   
+   .box {
+      border: none !important;
+      box-shadow: none !important;
+   }
+}
+
+/* Animations - reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+   *,
+   *::before,
+   *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+   }
+}
+
+/* Quality Audit specific overrides */
+.qa-dashboard .info-box {
+   margin-bottom: 0;
+}
+
+.qa-dashboard .card {
+   margin-bottom: 20px;
+}
+
+.qa-feedback {
+   position: fixed;
+   bottom: 20px;
+   right: 20px;
+   z-index: 9999;
+   max-width: 90%;
+   width: 400px;
+   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+   .qa-feedback {
+      bottom: 10px;
+      right: 10px;
+      left: 10px;
+      width: auto;
+   }
+}
+
+/* Mobile-friendly form labels */
+.form-label-mobile {
+   display: block;
+   margin-bottom: 5px;
+   font-weight: 600;
+}
+
+@media (max-width: 768px) {
+   .form-label-mobile {
+      font-size: 14px;
+   }
+}
+
+/* Responsive utility classes */
+.qa-text-center-mobile {
+   text-align: center;
+}
+
+@media (max-width: 768px) {
+   .qa-text-center-mobile {
+      text-align: center !important;
+   }
+}
+
+/* Status badges - larger for touch */
+.qa-status-badge {
+   padding: 8px 12px;
+   font-size: 14px;
+   border-radius: 4px;
+}
+
+/* Quick action buttons row */
+.qa-quick-actions {
+   display: flex;
+   gap: 10px;
+   flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+   .qa-quick-actions {
+      flex-direction: column;
+   }
+   
+   .qa-quick-actions .btn {
+      width: 100%;
+   }
+}

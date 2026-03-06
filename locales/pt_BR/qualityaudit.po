@@ -1,0 +1,122 @@
+# Portuguese (Brazil) translation for Quality Audit plugin
+msgid ""
+msgstr ""
+"Project-Id-Version: GLPi Quality Audit 1.0.0\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Quality Audit"
+msgstr "Auditoria de Qualidade"
+
+msgid "Quality Audit Configuration"
+msgstr "Configuração da Auditoria de Qualidade"
+
+msgid "Quality Audits"
+msgstr "Auditorias de Qualidade"
+
+msgid "API Provider"
+msgstr "Provedor de IA"
+
+msgid "API Key"
+msgstr "Chave da API"
+
+msgid "Your API key will be encrypted"
+msgstr "Sua chave de API será criptografada"
+
+msgid "AI Model"
+msgstr "Modelo de IA"
+
+msgid "Examples: gpt-4o-mini, claude-3-5-sonnet-20241022, gemini-1.5-flash"
+msgstr "Exemplos: gpt-4o-mini, claude-3-5-sonnet-20241022, gemini-1.5-flash"
+
+msgid "Auto Audit on Solution Close"
+msgstr "Auditoria Automática ao Fechar Solução"
+
+msgid "Re-audit on Solution Update"
+msgstr "Re-auditar ao Atualizar Solução"
+
+msgid "Approval Threshold (Score)"
+msgstr "Limite de Aprovação (Pontuação)"
+
+msgid "Solutions with score >= threshold will be approved"
+msgstr "Soluções com pontuação >= limite serão aprovadas"
+
+msgid "Ticket Types to Audit"
+msgstr "Tipos de Chamado para Auditar"
+
+msgid "Incidents"
+msgstr "Incidentes"
+
+msgid "Changes"
+msgstr "Mudanças"
+
+msgid "Problems"
+msgstr "Problemas"
+
+msgid "Notify Technician on Refusal"
+msgstr "Notificar Técnico em Caso de Recusa"
+
+msgid "Test API Connection"
+msgstr "Testar Conexão com API"
+
+msgid "Configuration saved successfully"
+msgstr "Configuração salva com sucesso"
+
+msgid "Error saving configuration"
+msgstr "Erro ao salvar configuração"
+
+msgid "Quality Audit Dashboard"
+msgstr "Dashboard de Auditoria de Qualidade"
+
+msgid "Top 5 Technicians"
+msgstr "Top 5 Técnicos"
+
+msgid "Recent Audits"
+msgstr "Auditorias Recentes"
+
+msgid "Technician"
+msgstr "Técnico"
+
+msgid "Avg Score"
+msgstr "Nota Média"
+
+msgid "Total"
+msgstr "Total"
+
+msgid "No data yet"
+msgstr "Sem dados ainda"
+
+msgid "Ticket"
+msgstr "Chamado"
+
+msgid "Type"
+msgstr "Tipo"
+
+msgid "Score"
+msgstr "Pontuação"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Date"
+msgstr "Data"
+
+msgid "Approved"
+msgstr "Aprovado"
+
+msgid "Refused"
+msgstr "Recusado"
+
+msgid "No audits yet"
+msgstr "Sem auditorias ainda"
+
+msgid "Dashboard"
+msgstr "Painel"
+
+msgid "Audits"
+msgstr "Auditorias"
+
+msgid "Configuration"
+msgstr "Configuração"
