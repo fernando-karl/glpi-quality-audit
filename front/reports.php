@@ -61,7 +61,7 @@ if (isset($_POST['generate_report'])) {
       // Offer download - use safe path
       $safe_filename = basename($report_file);
       echo "<div class='center' style='margin: 20px;'>";
-      echo "<a href='" . PLUGIN_DOC_DIR . "/qualityaudit/reports/$safe_filename' target='_blank' class='vsubmit'>";
+      echo "<a href='" . GLPI_PLUGIN_DOC_DIR . "/qualityaudit/reports/$safe_filename' target='_blank' class='vsubmit'>";
       echo "<i class='fas fa-download'></i> " . __('Download Report', 'qualityaudit');
       echo "</a>";
       echo "</div>";

@@ -10,8 +10,8 @@
  * @license MIT
  */
 
-define('PLUGIN_QUALITYAUDIT_VERSION', '1.0.6');
-define('PLUGIN_QUALITYAUDIT_MIN_GLPI', '11.0.0');
+define('PLUGIN_QUALITYAUDIT_VERSION', '1.0.7');
+define('PLUGIN_QUALITYAUDIT_MIN_GLPI', '10.0.0');
 define('PLUGIN_QUALITYAUDIT_MAX_GLPI', '11.0.99');
 
 /**
@@ -24,12 +24,14 @@ function plugin_init_qualityaudit() {
    
    $plugin = new Plugin();
    
-   // Register firewall strategies for front scripts
-   \Glpi\Http\Firewall::addPluginStrategyForLegacyScripts(
-      'qualityaudit',
-      '#^/front/.*\.php$#',
-      \Glpi\Http\Firewall::STRATEGY_AUTHENTICATED
-   );
+   // Register firewall strategies for front scripts (GLPi 11+ only)
+   if (class_exists('\Glpi\Http\Firewall')) {
+      \Glpi\Http\Firewall::addPluginStrategyForLegacyScripts(
+         'qualityaudit',
+         '#^/front/.*\.php$#',
+         \Glpi\Http\Firewall::STRATEGY_AUTHENTICATED
+      );
+   }
 
    if ($plugin->isInstalled('qualityaudit') && $plugin->isActivated('qualityaudit')) {
 
