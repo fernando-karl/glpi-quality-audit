@@ -4,7 +4,8 @@
  */
 
 
-Session::checkRight('ticket', READ);
+// Restrict dashboard to Supervisors, Admins and Super-Admins
+Session::checkRight('ticket', Ticket::ASSIGN);
 
 Html::header(__('Quality Audit Dashboard', 'qualityaudit'), $_SERVER['PHP_SELF'], 'tools', 'pluginqualityauditmenu');
 
@@ -17,29 +18,17 @@ echo '<link rel="stylesheet" href="' . $root_doc . '/plugins/qualityaudit/css/da
 // Group filter
 $groups_id = isset($_GET['groups_id']) ? (int)$_GET['groups_id'] : 0;
 
-// Get groups that have at least one technician with audits
+// Get all technical groups (is_assign = 1)
 $group_options = [];
 $group_iter = $DB->request([
-   'SELECT'          => ['gu.groups_id'],
-   'DISTINCT'        => true,
-   'FROM'            => 'glpi_plugin_qualityaudit_audits AS a',
-   'INNER JOIN'      => [
-      'glpi_groups_users AS gu' => [
-         'ON' => [
-            'a'  => 'technician_id',
-            'gu' => 'users_id'
-         ]
-      ]
-   ],
-   'WHERE'           => ['a.technician_id' => ['>', 0]]
+   'SELECT' => ['id', 'name'],
+   'FROM'   => 'glpi_groups',
+   'WHERE'  => ['is_assign' => 1],
+   'ORDER'  => 'name ASC'
 ]);
 foreach ($group_iter as $grow) {
-   $group = new Group();
-   if ($group->getFromDB($grow['groups_id'])) {
-      $group_options[$grow['groups_id']] = $group->getName();
-   }
+   $group_options[(int)$grow['id']] = $grow['name'];
 }
-asort($group_options);
 
 // Build WHERE criteria for filtering by group
 $where_criteria = [];
@@ -61,6 +50,11 @@ if ($groups_id > 0 && isset($group_options[$groups_id])) {
       $where_criteria = ['technician_id' => -1];
    }
 }
+
+// Check if plugin is configured (for admin banner)
+$root_config = PluginQualityauditConfig::getConfig(0);
+$is_configured = !empty($root_config['api_key']) && !empty($root_config['api_provider']);
+$can_configure = Session::haveRight('config', UPDATE);
 
 // ========== Statistics ==========
 
@@ -198,35 +192,51 @@ $chart_avg = array_map(function($d) { return (int)$d['avg_score']; }, $daily_dat
          <?php echo __('Quality Audit Dashboard', 'qualityaudit'); ?>
       </h2>
       <div class="qa-dashboard-actions">
+         <?php if (!empty($group_options)): ?>
+            <form method="GET" action="dashboard.php" class="qa-group-filter-inline">
+               <label for="groups_id"><i class="fas fa-users"></i></label>
+               <select name="groups_id" id="groups_id" class="form-select" onchange="this.form.submit()">
+                  <option value="0"><?php echo __('All Groups', 'qualityaudit'); ?></option>
+                  <?php foreach ($group_options as $gid => $gname): ?>
+                     <option value="<?php echo (int)$gid; ?>" <?php echo ($groups_id == $gid) ? 'selected' : ''; ?>>
+                        <?php echo htmlspecialchars($gname); ?>
+                     </option>
+                  <?php endforeach; ?>
+               </select>
+            </form>
+         <?php endif; ?>
+         <?php if ($can_configure): ?>
+            <a href="config.form.php" class="qa-btn-config">
+               <i class="fas fa-cog"></i> <?php echo __('Configuration', 'qualityaudit'); ?>
+            </a>
+         <?php endif; ?>
          <a href="reports.php" class="qa-btn-report">
             <i class="fas fa-file-pdf"></i> <?php echo __('Generate Report', 'qualityaudit'); ?>
          </a>
       </div>
    </div>
 
-   <?php if (!empty($group_options)): ?>
-   <!-- Group Filter -->
-   <div class="qa-filter-bar">
-      <form method="GET" action="dashboard.php" class="d-flex align-items-center" style="gap: 10px; width: 100%;">
-         <label for="groups_id">
-            <i class="fas fa-users"></i> <?php echo __('Filter by Group', 'qualityaudit'); ?>
-         </label>
-         <select name="groups_id" id="groups_id" class="form-select" style="max-width: 280px;" onchange="this.form.submit()">
-            <option value="0"><?php echo __('All Groups', 'qualityaudit'); ?></option>
-            <?php foreach ($group_options as $gid => $gname): ?>
-               <option value="<?php echo (int)$gid; ?>" <?php echo ($groups_id == $gid) ? 'selected' : ''; ?>>
-                  <?php echo htmlspecialchars($gname); ?>
-               </option>
-            <?php endforeach; ?>
-         </select>
-         <?php if ($groups_id > 0 && !empty($selected_group_name)): ?>
-            <span class="qa-filter-badge">
-               <i class="fas fa-filter"></i> <?php echo htmlspecialchars($selected_group_name); ?>
-            </span>
-         <?php endif; ?>
-      </form>
+   <?php if ($can_configure && !$is_configured): ?>
+   <!-- Setup Banner -->
+   <div class="qa-setup-banner">
+      <div class="qa-setup-banner-content">
+         <i class="fas fa-exclamation-triangle"></i>
+         <div>
+            <strong><?php echo __('Plugin not configured', 'qualityaudit'); ?></strong>
+            <p><?php echo __('Configure the AI provider and API key to start auditing solutions automatically.', 'qualityaudit'); ?></p>
+         </div>
+      </div>
+      <div class="qa-setup-banner-actions">
+         <a href="welcome.php" class="qa-step-btn primary">
+            <i class="fas fa-rocket"></i> <?php echo __('Getting Started', 'qualityaudit'); ?>
+         </a>
+         <a href="config.form.php" class="qa-step-btn outline">
+            <i class="fas fa-cog"></i> <?php echo __('Configuration', 'qualityaudit'); ?>
+         </a>
+      </div>
    </div>
    <?php endif; ?>
+
 
    <!-- KPI Cards -->
    <div class="qa-kpi-grid">

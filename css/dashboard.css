@@ -61,48 +61,101 @@
    text-decoration: none;
 }
 
-/* ========== Group Filter ========== */
-.qa-filter-bar {
+.qa-btn-config {
+   display: inline-flex;
+   align-items: center;
+   gap: 6px;
+   padding: 8px 18px;
+   background: #6c757d;
+   color: #fff;
+   border: none;
+   border-radius: 6px;
+   font-size: 13px;
+   font-weight: 600;
+   cursor: pointer;
+   text-decoration: none;
+   transition: background 0.15s;
+}
+
+.qa-btn-config:hover {
+   background: #495057;
+   color: #fff;
+   text-decoration: none;
+}
+
+/* ========== Setup Banner ========== */
+.qa-setup-banner {
    display: flex;
    align-items: center;
-   gap: 12px;
+   justify-content: space-between;
+   gap: 16px;
    margin-bottom: 24px;
-   padding: 12px 16px;
-   background: #fff;
-   border: 1px solid #dee2e6;
+   padding: 16px 20px;
+   background: #fff3cd;
+   border: 1px solid #ffc107;
+   border-left: 4px solid #ffc107;
    border-radius: 8px;
-   box-shadow: 0 1px 3px rgba(0,0,0,0.04);
    flex-wrap: wrap;
 }
 
-.qa-filter-bar label {
-   font-size: 13px;
-   font-weight: 600;
-   color: #495057;
-   white-space: nowrap;
+.qa-setup-banner-content {
    display: flex;
+   align-items: flex-start;
+   gap: 12px;
+   flex: 1;
+   min-width: 200px;
+}
+
+.qa-setup-banner-content > i {
+   font-size: 20px;
+   color: #856404;
+   margin-top: 2px;
+   flex-shrink: 0;
+}
+
+.qa-setup-banner-content strong {
+   display: block;
+   font-size: 14px;
+   color: #856404;
+   margin-bottom: 2px;
+}
+
+.qa-setup-banner-content p {
+   margin: 0;
+   font-size: 13px;
+   color: #856404;
+   line-height: 1.4;
+}
+
+.qa-setup-banner-actions {
+   display: flex;
+   gap: 8px;
+   flex-shrink: 0;
+   flex-wrap: wrap;
+}
+
+/* ========== Group Filter (inline in header) ========== */
+.qa-group-filter-inline {
+   display: inline-flex;
    align-items: center;
    gap: 6px;
    margin: 0;
 }
 
-.qa-filter-bar select {
-   max-width: 280px;
-   font-size: 13px;
-   border-radius: 6px;
+.qa-group-filter-inline label {
+   font-size: 14px;
+   color: #6c757d;
+   margin: 0;
+   display: flex;
+   align-items: center;
 }
 
-.qa-filter-badge {
-   display: inline-flex;
-   align-items: center;
-   gap: 4px;
-   font-size: 12px;
-   font-weight: 600;
-   padding: 4px 12px;
-   border-radius: 14px;
-   background: #e7f1ff;
-   color: #004085;
-   border: 1px solid #b8daff;
+.qa-group-filter-inline select {
+   max-width: 220px;
+   font-size: 13px;
+   border-radius: 6px;
+   padding: 6px 12px;
+   height: auto;
 }
 
 /* ========== KPI Cards ========== */
