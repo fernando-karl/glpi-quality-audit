@@ -369,12 +369,12 @@ class PluginQualityauditConfig extends CommonDBTM {
       // Footer with action buttons
       echo "<div class='qa-config-footer'>";
       if ($has_own_config && $entities_id != 0) {
-         echo "<button type='submit' name='delete_config' class='qa-btn-delete' onclick='return confirm(\"" . __s('Are you sure?') . "\");'>";
-         echo "<i class='fas fa-trash-alt'></i> " . __s('Delete and use inherited config');
+         echo "<button type='submit' name='delete_config' class='qa-btn-delete' onclick='return confirm(\"" . __s('Are you sure?', 'qualityaudit') . "\");'>";
+         echo "<i class='fas fa-trash-alt'></i> " . __s('Delete and use inherited config', 'qualityaudit');
          echo "</button>";
       }
       echo "<button type='submit' name='update_config' class='qa-btn-save'>";
-      echo "<i class='fas fa-save'></i> " . __s('Save');
+      echo "<i class='fas fa-save'></i> " . __s('Save', 'qualityaudit');
       echo "</button>";
       echo "</div>";
 
@@ -382,19 +382,22 @@ class PluginQualityauditConfig extends CommonDBTM {
       Html::closeForm();
 
       // Modal for Test API Connection
+      $modal_title_text = __('Test API Connection', 'qualityaudit');
+      $modal_testing_text = __('Testing...', 'qualityaudit');
+      $modal_close_text = __('Close', 'qualityaudit');
       echo <<<HTML
       <div id="qa-test-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:10000; align-items:center; justify-content:center;">
          <div class="qa-modal-inner" style="background:#fff; border-radius:12px; padding:30px; max-width:480px; width:90%; margin:auto; position:relative; top:50%; transform:translateY(-50%); box-shadow:0 8px 30px rgba(0,0,0,0.2);">
-            <h3 style="margin-top:0;" id="qa-modal-title"><i class="fas fa-wifi" style="margin-right:8px;color:#6c757d;"></i>Test API Connection</h3>
+            <h3 style="margin-top:0;" id="qa-modal-title"><i class="fas fa-wifi" style="margin-right:8px;color:#6c757d;"></i>{$modal_title_text}</h3>
             <div id="qa-modal-body" style="min-height:60px;">
                <div id="qa-modal-spinner" style="text-align:center; padding:20px;">
                   <i class="fas fa-spinner fa-spin fa-2x"></i>
-                  <p style="margin-top:10px;">Testing...</p>
+                  <p style="margin-top:10px;">{$modal_testing_text}</p>
                </div>
                <div id="qa-modal-result" style="display:none;"></div>
             </div>
             <div style="text-align:right; margin-top:15px;">
-               <button type="button" class="vsubmit" id="qa-modal-close">Close</button>
+               <button type="button" class="vsubmit" id="qa-modal-close">{$modal_close_text}</button>
             </div>
          </div>
       </div>

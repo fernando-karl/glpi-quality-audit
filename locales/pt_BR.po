@@ -1,0 +1,559 @@
+# Portuguese (Brazil) translation for Quality Audit plugin
+# Copyright (C) 2024 Fernando Karl / Rehoboam AI
+# This file is distributed under the MIT license.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: GLPi Quality Audit 1.0.7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: Fernando Karl\n"
+"Language-Team: Brazilian Portuguese\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+# ===== Core / Menu =====
+
+msgid "Quality Audit"
+msgstr "Auditoria de Qualidade"
+
+msgid "Quality Audit Configuration"
+msgstr "Configuração da Auditoria de Qualidade"
+
+msgid "Quality Audits"
+msgstr "Auditorias de Qualidade"
+
+msgid "Dashboard"
+msgstr "Painel"
+
+msgid "Audits"
+msgstr "Auditorias"
+
+msgid "Reports"
+msgstr "Relatórios"
+
+msgid "Getting Started"
+msgstr "Primeiros Passos"
+
+msgid "Configuration"
+msgstr "Configuração"
+
+# ===== Config page =====
+
+msgid "Entity"
+msgstr "Entidade"
+
+msgid "Inherited from: %s"
+msgstr "Herdado de: %s"
+
+msgid "Specific configuration for this entity"
+msgstr "Configuração específica para esta entidade"
+
+msgid "Apply to child entities"
+msgstr "Aplicar a entidades filhas"
+
+msgid "If enabled, child entities without specific config will use this configuration"
+msgstr "Se ativado, entidades filhas sem configuração específica usarão esta configuração"
+
+msgid "Connection"
+msgstr "Conexão"
+
+msgid "API Provider"
+msgstr "Provedor de IA"
+
+msgid "API Key"
+msgstr "Chave da API"
+
+msgid "Configured"
+msgstr "Configurada"
+
+msgid "Not configured"
+msgstr "Não configurada"
+
+msgid "Toggle visibility"
+msgstr "Alternar visibilidade"
+
+msgid "Leave empty to keep current key. Enter new key to update."
+msgstr "Deixe vazio para manter a chave atual. Insira nova chave para atualizar."
+
+msgid "AI Model"
+msgstr "Modelo de IA"
+
+msgid "Examples: gpt-4o-mini, claude-3-5-sonnet-20241022, gemini-1.5-flash"
+msgstr "Exemplos: gpt-4o-mini, claude-3-5-sonnet-20241022, gemini-1.5-flash"
+
+msgid "Test API Connection"
+msgstr "Testar Conexão com API"
+
+msgid "Testing..."
+msgstr "Testando..."
+
+msgid "Close"
+msgstr "Fechar"
+
+msgid "Business Rules"
+msgstr "Regras de Negócio"
+
+msgid "Auto Audit on Solution Close"
+msgstr "Auditoria Automática ao Fechar Solução"
+
+msgid "Automatically evaluates solution quality when a ticket is closed"
+msgstr "Avalia automaticamente a qualidade da solução quando um chamado é fechado"
+
+msgid "Re-audit on Solution Update"
+msgstr "Re-auditar ao Atualizar Solução"
+
+msgid "When a technician updates an existing solution, a new audit will be triggered automatically"
+msgstr "Quando um técnico atualiza uma solução existente, uma nova auditoria será disparada automaticamente"
+
+msgid "Approval Threshold (Score)"
+msgstr "Limite de Aprovação (Pontuação)"
+
+msgid "Solutions with score >= threshold will be approved. Below this value they are refused."
+msgstr "Soluções com pontuação >= limite serão aprovadas. Abaixo deste valor serão recusadas."
+
+msgid "Solutions with score >= threshold will be approved"
+msgstr "Soluções com pontuação >= limite serão aprovadas"
+
+msgid "Ticket Types to Audit"
+msgstr "Tipos de Chamado para Auditar"
+
+msgid "Incidents"
+msgstr "Incidentes"
+
+msgid "Changes"
+msgstr "Mudanças"
+
+msgid "Problems"
+msgstr "Problemas"
+
+msgid "Notify Technician on Refusal"
+msgstr "Notificar Técnico em Caso de Recusa"
+
+msgid "Configured Entities"
+msgstr "Entidades Configuradas"
+
+msgid "Model"
+msgstr "Modelo"
+
+msgid "Last Modified"
+msgstr "Última Modificação"
+
+msgid "Root entity"
+msgstr "Entidade raiz"
+
+msgid "Configuration Inheritance Tree"
+msgstr "Árvore de Herança de Configuração"
+
+msgid "Has Config"
+msgstr "Tem Configuração"
+
+msgid "Recursive"
+msgstr "Recursivo"
+
+msgid "Yes"
+msgstr "Sim"
+
+msgid "No (inherited)"
+msgstr "Não (herdado)"
+
+msgid "Are you sure?"
+msgstr "Tem certeza?"
+
+msgid "Delete and use inherited config"
+msgstr "Excluir e usar configuração herdada"
+
+msgid "Save"
+msgstr "Salvar"
+
+# ===== Config form messages =====
+
+msgid "Configuration saved successfully for entity: %s"
+msgstr "Configuração salva com sucesso para entidade: %s"
+
+msgid "Error saving configuration"
+msgstr "Erro ao salvar configuração"
+
+msgid "Configuration deleted. Entity will now use inherited configuration."
+msgstr "Configuração excluída. A entidade agora usará a configuração herdada."
+
+msgid "Error deleting configuration"
+msgstr "Erro ao excluir configuração"
+
+msgid "Cannot delete root entity configuration"
+msgstr "Não é possível excluir a configuração da entidade raiz"
+
+# ===== Dashboard =====
+
+msgid "Quality Audit Dashboard"
+msgstr "Painel da Auditoria de Qualidade"
+
+msgid "All Groups"
+msgstr "Todos os Grupos"
+
+msgid "Generate Report"
+msgstr "Gerar Relatório"
+
+msgid "Plugin not configured"
+msgstr "Plugin não configurado"
+
+msgid "Configure the AI provider and API key to start auditing solutions automatically."
+msgstr "Configure o provedor de IA e a chave da API para começar a auditar soluções automaticamente."
+
+msgid "Total Audits"
+msgstr "Total de Auditorias"
+
+msgid "Approved"
+msgstr "Aprovado"
+
+msgid "of total"
+msgstr "do total"
+
+msgid "Refused"
+msgstr "Recusado"
+
+msgid "Average Score"
+msgstr "Nota Média"
+
+msgid "Audit Trend (30 days)"
+msgstr "Tendência de Auditorias (30 dias)"
+
+msgid "No data for the last 30 days"
+msgstr "Sem dados nos últimos 30 dias"
+
+msgid "Approval Rate"
+msgstr "Taxa de Aprovação"
+
+msgid "No audits yet"
+msgstr "Sem auditorias ainda"
+
+msgid "Score Distribution"
+msgstr "Distribuição de Notas"
+
+msgid "Average by Criteria"
+msgstr "Média por Critério"
+
+msgid "No criteria data yet"
+msgstr "Sem dados de critérios ainda"
+
+msgid "Top 5 Technicians"
+msgstr "Top 5 Técnicos"
+
+msgid "Technician"
+msgstr "Técnico"
+
+msgid "Avg Score"
+msgstr "Nota Média"
+
+msgid "No data yet"
+msgstr "Sem dados ainda"
+
+msgid "Recent Audits"
+msgstr "Auditorias Recentes"
+
+msgid "Ticket"
+msgstr "Chamado"
+
+msgid "Type"
+msgstr "Tipo"
+
+msgid "Score"
+msgstr "Pontuação"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Date"
+msgstr "Data"
+
+msgid "Total"
+msgstr "Total"
+
+msgid "Average"
+msgstr "Média"
+
+msgid "Spelling"
+msgstr "Ortografia"
+
+msgid "Completeness"
+msgstr "Completude"
+
+msgid "Resolution"
+msgstr "Resolução"
+
+msgid "Clarity"
+msgstr "Clareza"
+
+msgid "Technical"
+msgstr "Técnica"
+
+# ===== Audit page =====
+
+msgid "Quality Audit Audits"
+msgstr "Auditorias de Qualidade"
+
+msgid "All Status"
+msgstr "Todos os Status"
+
+msgid "All Technicians"
+msgstr "Todos os Técnicos"
+
+msgid "Filter"
+msgstr "Filtrar"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Analysis"
+msgstr "Análise"
+
+msgid "Audit Analysis"
+msgstr "Análise da Auditoria"
+
+msgid "Improvement Suggestion"
+msgstr "Sugestão de Melhoria"
+
+msgid "Spelling/Grammar"
+msgstr "Ortografia/Gramática"
+
+msgid "Clarity/Tone"
+msgstr "Clareza/Tom"
+
+msgid "No audits found"
+msgstr "Nenhuma auditoria encontrada"
+
+# ===== Reports =====
+
+msgid "Quality Audit Reports"
+msgstr "Relatórios de Auditoria de Qualidade"
+
+msgid "Report generated successfully: %s"
+msgstr "Relatório gerado com sucesso: %s"
+
+msgid "Download Report"
+msgstr "Baixar Relatório"
+
+msgid "Error generating report"
+msgstr "Erro ao gerar relatório"
+
+msgid "Date From"
+msgstr "Data Inicial"
+
+msgid "Date To"
+msgstr "Data Final"
+
+msgid "All"
+msgstr "Todos"
+
+msgid "Generate PDF Report"
+msgstr "Gerar Relatório PDF"
+
+msgid "Current Period Statistics"
+msgstr "Estatísticas do Período Atual"
+
+# ===== Test API =====
+
+msgid "API key not configured"
+msgstr "Chave da API não configurada"
+
+msgid "API connection successful!"
+msgstr "Conexão com a API bem-sucedida!"
+
+msgid "API response invalid"
+msgstr "Resposta da API inválida"
+
+# ===== Solution Validation =====
+
+msgid "Solution text is empty."
+msgstr "O texto da solução está vazio."
+
+msgid "Quality Audit not configured for this entity"
+msgstr "Auditoria de Qualidade não configurada para esta entidade"
+
+msgid "AI quality audit service is temporarily unavailable."
+msgstr "O serviço de auditoria de qualidade por IA está temporariamente indisponível."
+
+msgid "Solution indicates problem was not resolved. Cannot provide improvement suggestion."
+msgstr "A solução indica que o problema não foi resolvido. Não é possível fornecer sugestão de melhoria."
+
+msgid "Solution is very short (less than 20 characters)"
+msgstr "A solução é muito curta (menos de 20 caracteres)"
+
+msgid "Solution is short. Consider adding more details."
+msgstr "A solução é curta. Considere adicionar mais detalhes."
+
+msgid "Avoid generic responses like \"%s\". Explain what was done."
+msgstr "Evite respostas genéricas como \"%s\". Explique o que foi feito."
+
+msgid "Solution should have at least 2 sentences explaining the actions taken."
+msgstr "A solução deve ter pelo menos 2 frases explicando as ações tomadas."
+
+msgid "Good: Contains technical action words."
+msgstr "Bom: Contém palavras de ação técnica."
+
+msgid "Consider adding specific actions taken (e.g., \"configured\", \"restarted\", \"verified\")."
+msgstr "Considere adicionar ações específicas realizadas (ex.: \"configurado\", \"reiniciado\", \"verificado\")."
+
+# ===== Welcome / Setup =====
+
+msgid "Quality Audit Setup"
+msgstr "Configuração Inicial do Quality Audit"
+
+msgid "Welcome to Quality Audit!"
+msgstr "Bem-vindo ao Quality Audit!"
+
+msgid "Follow the steps below to activate AI-powered solution auditing."
+msgstr "Siga os passos abaixo para ativar a auditoria de soluções por IA."
+
+msgid "complete"
+msgstr "completo"
+
+msgid "Configure & Test API Connection"
+msgstr "Configurar e Testar Conexão com API"
+
+msgid "Choose your AI provider, enter the API key, select the model, and test the connection. Everything is on the same page."
+msgstr "Escolha seu provedor de IA, insira a chave da API, selecione o modelo e teste a conexão. Tudo na mesma página."
+
+msgid "Connected"
+msgstr "Conectado"
+
+msgid "Key saved"
+msgstr "Chave salva"
+
+msgid "Edit Configuration"
+msgstr "Editar Configuração"
+
+msgid "API Key missing"
+msgstr "Chave da API ausente"
+
+msgid "Open Configuration"
+msgstr "Abrir Configuração"
+
+msgid "Enable Automatic Auditing"
+msgstr "Ativar Auditoria Automática"
+
+msgid "When enabled, every solution added to a ticket will be automatically evaluated by AI and scored based on quality criteria."
+msgstr "Quando ativado, toda solução adicionada a um chamado será automaticamente avaliada por IA e pontuada com base em critérios de qualidade."
+
+msgid "Complete Step 1 first"
+msgstr "Complete o Passo 1 primeiro"
+
+msgid "Auto Audit is ON"
+msgstr "Auditoria Automática LIGADA"
+
+msgid "Threshold"
+msgstr "Limite"
+
+msgid "Adjust Rules"
+msgstr "Ajustar Regras"
+
+msgid "Auto Audit is OFF"
+msgstr "Auditoria Automática DESLIGADA"
+
+msgid "The plugin will not audit solutions until this is enabled."
+msgstr "O plugin não auditará soluções até que isto seja ativado."
+
+msgid "Enable in Configuration"
+msgstr "Ativar na Configuração"
+
+msgid "Monitor Results"
+msgstr "Monitorar Resultados"
+
+msgid "Once configured and enabled, audit results will appear on the dashboard automatically as technicians close tickets."
+msgstr "Uma vez configurado e ativado, os resultados das auditorias aparecerão no painel automaticamente conforme os técnicos fecham chamados."
+
+msgid "Waiting for setup"
+msgstr "Aguardando configuração"
+
+msgid "Everything is set up! Audits will start appearing here as soon as a technician adds a solution to a ticket."
+msgstr "Tudo configurado! As auditorias começarão a aparecer aqui assim que um técnico adicionar uma solução a um chamado."
+
+msgid "Waiting for first audit..."
+msgstr "Aguardando primeira auditoria..."
+
+msgid "Open Dashboard"
+msgstr "Abrir Painel"
+
+msgid "You already have %d audit(s) recorded. Check the dashboard for scores, trends, and reports."
+msgstr "Você já tem %d auditoria(s) registrada(s). Confira o painel para notas, tendências e relatórios."
+
+msgid "%d audits"
+msgstr "%d auditorias"
+
+# ===== Notification emails =====
+
+msgid "[Quality Audit] Solution Refused - Ticket #%d"
+msgstr "[Auditoria de Qualidade] Solução Recusada - Chamado #%d"
+
+msgid "Solution Refused in Quality Audit"
+msgstr "Solução Recusada na Auditoria de Qualidade"
+
+msgid "Dear user,"
+msgstr "Prezado(a),"
+
+msgid "Your solution for ticket <strong>#%d - %s</strong> was analyzed by Quality Audit and <strong>was not approved</strong>."
+msgstr "Sua solução para o chamado <strong>#%d - %s</strong> foi analisada pela Auditoria de Qualidade e <strong>não foi aprovada</strong>."
+
+msgid "Ticket:"
+msgstr "Chamado:"
+
+msgid "Score:"
+msgstr "Nota:"
+
+msgid "(minimum: %d)"
+msgstr "(mínimo: %d)"
+
+msgid "Status:"
+msgstr "Status:"
+
+msgid "REFUSED"
+msgstr "RECUSADO"
+
+msgid "Analysis:"
+msgstr "Análise:"
+
+msgid "Improvement Suggestion:"
+msgstr "Sugestão de Melhoria:"
+
+msgid "Next Steps:"
+msgstr "Próximos Passos:"
+
+msgid "Review the solution provided in the ticket"
+msgstr "Revise a solução informada no chamado"
+
+msgid "Adjust the text according to the suggestion above"
+msgstr "Ajuste o texto conforme a sugestão acima"
+
+msgid "Resubmit the solution for validation"
+msgstr "Reenvie a solução para validação"
+
+msgid "To access the ticket directly, click the link below:"
+msgstr "Para acessar o chamado diretamente, clique no link abaixo:"
+
+msgid "View Ticket #%d"
+msgstr "Visualizar Chamado #%d"
+
+msgid "This is an automated message from the GLPi Quality Audit System"
+msgstr "Esta é uma mensagem automática do Sistema de Auditoria de Qualidade do GLPi"
+
+msgid "Do not reply to this email"
+msgstr "Não responda este email"
+
+msgid "[Quality Audit] Summary %s - %s"
+msgstr "[Auditoria de Qualidade] Resumo %s - %s"
+
+msgid "Quality Audit Summary"
+msgstr "Resumo da Auditoria de Qualidade"
+
+msgid "Period: %s"
+msgstr "Período: %s"
+
+msgid "Approved (%d%%)"
+msgstr "Aprovadas (%d%%)"
+
+msgid "View Full Dashboard"
+msgstr "Ver Painel Completo"

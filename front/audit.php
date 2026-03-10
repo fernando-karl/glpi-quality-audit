@@ -80,7 +80,7 @@ foreach ($tech_iterator as $row) {
       <div class="box-tools pull-right">
          <form method="get" action="" class="form-inline">
             <select name="status" class="form-control input-sm">
-               <option value=""><?php echo __('All Status'); ?></option>
+               <option value=""><?php echo __('All Status', 'qualityaudit'); ?></option>
                <option value="APROVADO" <?php echo $status_filter == 'APROVADO' ? 'selected' : ''; ?>>
                   <?php echo __('Approved', 'qualityaudit'); ?>
                </option>
@@ -90,7 +90,7 @@ foreach ($tech_iterator as $row) {
             </select>
             
             <select name="technician_id" class="form-control input-sm">
-               <option value="0"><?php echo __('All Technicians'); ?></option>
+               <option value="0"><?php echo __('All Technicians', 'qualityaudit'); ?></option>
                <?php foreach ($technicians as $id => $name): ?>
                   <option value="<?php echo $id; ?>" <?php echo $technician_filter == $id ? 'selected' : ''; ?>>
                      <?php echo htmlspecialchars($name); ?>
@@ -99,7 +99,7 @@ foreach ($tech_iterator as $row) {
             </select>
             
             <button type="submit" class="btn btn-sm btn-default">
-               <i class="fas fa-filter"></i> <?php echo __('Filter'); ?>
+               <i class="fas fa-filter"></i> <?php echo __('Filter', 'qualityaudit'); ?>
             </button>
          </form>
       </div>
@@ -109,14 +109,14 @@ foreach ($tech_iterator as $row) {
       <table class="table table-striped">
          <thead>
             <tr>
-               <th><?php echo __('ID'); ?></th>
-               <th><?php echo __('Date'); ?></th>
-               <th><?php echo __('Ticket'); ?></th>
-               <th><?php echo __('Type'); ?></th>
-               <th><?php echo __('Technician'); ?></th>
-               <th><?php echo __('Score'); ?></th>
-               <th><?php echo __('Status'); ?></th>
-               <th><?php echo __('Analysis'); ?></th>
+               <th><?php echo __('ID', 'qualityaudit'); ?></th>
+               <th><?php echo __('Date', 'qualityaudit'); ?></th>
+               <th><?php echo __('Ticket', 'qualityaudit'); ?></th>
+               <th><?php echo __('Type', 'qualityaudit'); ?></th>
+               <th><?php echo __('Technician', 'qualityaudit'); ?></th>
+               <th><?php echo __('Score', 'qualityaudit'); ?></th>
+               <th><?php echo __('Status', 'qualityaudit'); ?></th>
+               <th><?php echo __('Analysis', 'qualityaudit'); ?></th>
             </tr>
          </thead>
          <tbody>
@@ -140,9 +140,9 @@ foreach ($tech_iterator as $row) {
                   </td>
                   <td>
                      <?php if ($audit['status'] === 'APROVADO'): ?>
-                        <span class="badge bg-success">✓ <?php echo __('Approved'); ?></span>
+                        <span class="badge bg-success">✓ <?php echo __('Approved', 'qualityaudit'); ?></span>
                      <?php else: ?>
-                        <span class="badge bg-danger">✗ <?php echo __('Refused'); ?></span>
+                        <span class="badge bg-danger">✗ <?php echo __('Refused', 'qualityaudit'); ?></span>
                      <?php endif; ?>
                   </td>
                   <td>
@@ -164,7 +164,7 @@ foreach ($tech_iterator as $row) {
             <?php if (empty($audits)): ?>
                <tr>
                   <td colspan="8" class="text-center text-muted">
-                     <?php echo __('No audits found'); ?>
+                     <?php echo __('No audits found', 'qualityaudit'); ?>
                   </td>
                </tr>
             <?php endif; ?>

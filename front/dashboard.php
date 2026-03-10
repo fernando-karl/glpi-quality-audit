@@ -339,9 +339,9 @@ $chart_avg = array_map(function($d) { return (int)$d['avg_score']; }, $daily_dat
             <thead>
                <tr>
                   <th>#</th>
-                  <th><?php echo __('Technician'); ?></th>
-                  <th><?php echo __('Avg Score'); ?></th>
-                  <th><?php echo __('Audits'); ?></th>
+                  <th><?php echo __('Technician', 'qualityaudit'); ?></th>
+                  <th><?php echo __('Avg Score', 'qualityaudit'); ?></th>
+                  <th><?php echo __('Audits', 'qualityaudit'); ?></th>
                </tr>
             </thead>
             <tbody>
@@ -383,11 +383,11 @@ $chart_avg = array_map(function($d) { return (int)$d['avg_score']; }, $daily_dat
          <table class="qa-data-table">
             <thead>
                <tr>
-                  <th><?php echo __('Ticket'); ?></th>
-                  <th><?php echo __('Type'); ?></th>
-                  <th><?php echo __('Score'); ?></th>
-                  <th><?php echo __('Status'); ?></th>
-                  <th><?php echo __('Date'); ?></th>
+                  <th><?php echo __('Ticket', 'qualityaudit'); ?></th>
+                  <th><?php echo __('Type', 'qualityaudit'); ?></th>
+                  <th><?php echo __('Score', 'qualityaudit'); ?></th>
+                  <th><?php echo __('Status', 'qualityaudit'); ?></th>
+                  <th><?php echo __('Date', 'qualityaudit'); ?></th>
                </tr>
             </thead>
             <tbody>
@@ -407,11 +407,11 @@ $chart_avg = array_map(function($d) { return (int)$d['avg_score']; }, $daily_dat
                   <td>
                      <?php if ($audit['status'] === 'APROVADO'): ?>
                         <span class="qa-score-badge approved">
-                           <i class="fas fa-check"></i> <?php echo __('Approved'); ?>
+                           <i class="fas fa-check"></i> <?php echo __('Approved', 'qualityaudit'); ?>
                         </span>
                      <?php else: ?>
                         <span class="qa-score-badge refused">
-                           <i class="fas fa-times"></i> <?php echo __('Refused'); ?>
+                           <i class="fas fa-times"></i> <?php echo __('Refused', 'qualityaudit'); ?>
                         </span>
                      <?php endif; ?>
                   </td>
